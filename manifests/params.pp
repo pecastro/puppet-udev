@@ -29,7 +29,7 @@ class udev::params {
       }
     }
     'fedora': {
-      if ($::operatingsystemmajrelease >= 20) {
+      if (versioncmp($::operatingsystemmajrelease,'20')>=0) {
         $udev_package    = 'systemd'
         $udevtrigger     = 'udevadm trigger'
         $udevlogpriority = 'udevadm control --log-priority'
